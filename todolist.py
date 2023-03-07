@@ -23,6 +23,7 @@ class ListaTarefas:
     def remover_tarefa(self, tarefa):
         if self.primeiro is None:
             return
+        
         if self.primeiro.tarefa == tarefa:
             self.primeiro = self.primeiro.proximo
             return
@@ -63,13 +64,13 @@ lista = ListaTarefas()
 lista.adicionar_tarefa("Fazer compras")
 lista.adicionar_tarefa("Lavar roupa")
 lista.adicionar_tarefa("Estudar Python")
-
+print('-'*10)
 lista.listar_tarefas()
 # Saída:
 # Fazer compras (Não Concluída)
 # Lavar roupa (Não Concluída)
 # Estudar Python (Não Concluída)
-
+print('-'*10)
 lista.marcar_como_concluida("Fazer compras")
 lista.marcar_como_concluida("Lavar roupa")
 
@@ -80,7 +81,7 @@ lista.listar_tarefas()
 # Estudar Python (Não Concluída)
 
 lista.remover_tarefa("Lavar roupa")
-
+print('-'*10)
 lista.listar_tarefas()
 # Saída:
 # Fazer compras (Concluída)
