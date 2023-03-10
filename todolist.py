@@ -22,7 +22,7 @@ class ListaTarefas:
 
     def remover_tarefa(self, tarefa):
         if self.primeiro is None:
-            return
+            return IndexError('The range out of list.')
         
         if self.primeiro.tarefa == tarefa:
             self.primeiro = self.primeiro.proximo
@@ -64,25 +64,19 @@ lista = ListaTarefas()
 lista.adicionar_tarefa("Fazer compras")
 lista.adicionar_tarefa("Lavar roupa")
 lista.adicionar_tarefa("Estudar Python")
+lista.adicionar_tarefa('Projeto de ED')
 print('-'*10)
 lista.listar_tarefas()
-# Saída:
-# Fazer compras (Não Concluída)
-# Lavar roupa (Não Concluída)
-# Estudar Python (Não Concluída)
+#
+
 print('-'*10)
 lista.marcar_como_concluida("Fazer compras")
 lista.marcar_como_concluida("Lavar roupa")
 
 lista.listar_tarefas()
-# Saída:
-# Fazer compras (Concluída)
-# Lavar roupa (Concluída)
-# Estudar Python (Não Concluída)
+#
 
-lista.remover_tarefa("Lavar roupa")
+lista.remover_tarefa("Projeto de ED")
 print('-'*10)
 lista.listar_tarefas()
-# Saída:
-# Fazer compras (Concluída)
-# Estudar Python (Não Concluída)
+# 
