@@ -1,3 +1,5 @@
+import os
+
 class Node:
     def __init__(self, tarefa, concluida=False):
         self.tarefa = tarefa
@@ -59,24 +61,42 @@ class ListaLanche:
             atual = atual.proximo
 
 
-lista = ListaLanche()
 
-lista.adicionar_lanche("1 coxinha")
-lista.adicionar_lanche("2 pasteis")
-lista.adicionar_lanche("1 pizza")
-lista.adicionar_lanche('1 arroz e feijao')
-print('-'*10)
-lista.listar_lanches()
-#
 
-print('-'*10)
-lista.marcar_como_feito("1 coxinha")
-lista.marcar_como_feito("2 pasteis")
+lista_lanche = ListaLanche()
 
-lista.listar_lanches()
-#
+while True:
+    os.system('cls' if os.name == 'nt' else 'clear') # Limpa a tela do terminal
+    print('1 - Criar lista encadeada')
+    print('2 - Adicionar lanche')
+    print('3 - Remover lanche')
+    print('4 - Marcar como concluído')
+    print('5 - Marcar como não concluído')
+    print('6 - Listar lanches')
+    print('0 - Sair')
 
-lista.remover_lanche("1 arroz e feijao")
-print('-'*10)
-lista.listar_lanches()
-# 
+    opcao = input('Escolha uma opção: ')
+
+    if opcao == '1':
+        print('Lista encadeada criada.')
+    elif opcao == '2':
+        tarefa = input('Digite o nome do lanche: ')
+        lista_lanche.adicionar_lanche(tarefa)
+    elif opcao == '3':
+        tarefa = input('Digite o nome do lanche a ser removido: ')
+        lista_lanche.remover_lanche(tarefa)
+    elif opcao == '4':
+        tarefa = input('Digite o nome do lanche a ser marcado como concluído: ')
+        lista_lanche.marcar_como_feito(tarefa)
+    elif opcao == '5':
+        tarefa = input('Digite o nome do lanche a ser marcado como não concluído: ')
+        lista_lanche.marcar_como_nao_feito(tarefa)
+    elif opcao == '6':
+        lista_lanche.listar_lanches()
+    elif opcao == '0':
+        break
+    else:
+        print('Opção inválida. Tente novamente.')
+        continue
+    
+    input('Pressione Enter para continuar...') # Pede para o usuário pressionar Enter antes de continuar
