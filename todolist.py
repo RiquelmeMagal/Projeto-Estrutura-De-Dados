@@ -99,4 +99,4 @@ while True:
         print('Opção inválida. Tente novamente.')
         continue
     
-    input('Pressione Enter para continuar...') # Pede para o usuário pressionar Enter antes de continuar
+    input('Pressione Enter para continuar...')
