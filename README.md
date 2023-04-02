@@ -1,2 +1,4 @@
-# Projeto-Estrutura-De-Dados
- Projeto de Estrutura de Dados, usando conceitos vistos em aula.
+# To do list.
+Tema:__*Lista de Afazares__*
+O meu projeto usa **Lista Encadeada Simples** e tem a proposta de simular uma lista de afazares de um restaurante.
+É um projeto bem simples, não há interface gráfica, não existe uma complexidade tão grande de entender o código.
